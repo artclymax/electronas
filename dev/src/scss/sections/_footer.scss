@@ -1,0 +1,112 @@
+@use "../tools" as *;
+
+.footer {
+	padding-block: adapt(32, 16);
+	background-color: var(--color-white);
+	border-top: 1px solid var(--color-gray-2);
+
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 32px;
+
+		@include media($mobile) {
+			flex-direction: column;
+			align-items: start;
+		}
+	}
+
+	&__brand {
+		max-width: 208px;
+		width: 100%;
+	}
+
+	&__logo {
+		max-width: 194px;
+
+		&:not(:last-child) {
+			margin-bottom: 8px;
+		}
+	}
+
+	&__copy {
+		@include reset;
+
+		font-size: 12px;
+		letter-spacing: 1.2px;
+		text-transform: uppercase;
+		color: var(--color-gray-3);
+	}
+
+	&__menu {
+	}
+
+	&__legal {
+		text-align: right;
+		max-width: 358px;
+		width: 100%;
+
+		@include media($tablet) {
+			max-width: 186px;
+		}
+
+		@include media($mobile) {
+			max-width: 100%;
+			text-align: left;
+		}
+
+		a {
+			display: block;
+			font-size: 12px;
+			letter-spacing: 1.2px;
+			text-transform: uppercase;
+			color: var(--color-gray-3);
+			transition: all 0.3s;
+
+			@include hover {
+				color: var(--color-accent-hover);
+			}
+
+			&:not(:last-child) {
+				margin-bottom: 16px;
+			}
+		}
+	}
+}
+
+.footer-menu {
+	width: 100%;
+
+	&__list {
+		@include reset;
+		list-style-type: none;
+
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		gap: 16px 36px;
+
+		@include media($tablet) {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 16px;
+		}
+
+		li {
+			a {
+				text-decoration: none;
+				font-size: adapt(14, 12);
+				font-weight: 700;
+				letter-spacing: 1.2px;
+				text-transform: uppercase;
+				color: var(--color-base-dark);
+				transition: all 0.3s;
+
+				@include hover {
+					color: var(--color-accent-hover);
+				}
+			}
+		}
+	}
+}

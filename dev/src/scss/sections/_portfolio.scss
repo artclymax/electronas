@@ -1,0 +1,76 @@
+@use "../tools" as *;
+
+.portfolio {
+	padding-block: var(--section-padding);
+	background-color: var(--color-white);
+	border-block: 1px solid var(--color-gray-2);
+
+	&__container {
+	}
+
+	&__subtitle {
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: adapt(64, 32);
+		}
+	}
+
+	&__list {
+		@include reset;
+		list-style-type: none;
+		--col: 3;
+
+		display: grid;
+		grid-template-columns: repeat(var(--col), 1fr);
+
+		gap: 1px; /* толщина "границы" */
+		background-color: var(--color-gray-2); /* цвет границы */
+		padding: 1px; /* внешняя рамка */
+
+		@include media($tablet) {
+			--col: 2;
+		}
+
+		@include media($mobile-sm) {
+			--col: 1;
+		}
+	}
+
+	&__item {
+	}
+}
+
+.portfolio-item {
+	background-color: var(--color-white); /* фон карточки */
+
+	&__image {
+		min-height: adapt(384, 280);
+	}
+
+	&__content {
+		padding: adapt(32, 20) adapt(24, 10);
+	}
+
+	&__title {
+		@include reset;
+
+		font-size: adapt(20, 16);
+		font-weight: 700;
+		color: var(--color-dark);
+
+		&:not(:last-child) {
+			margin-bottom: 16px;
+		}
+	}
+
+	&__text {
+		@include reset;
+
+		font-size: 14px;
+		text-transform: uppercase;
+		letter-spacing: 0.7px;
+		color: var(--color-gray-3);
+	}
+}

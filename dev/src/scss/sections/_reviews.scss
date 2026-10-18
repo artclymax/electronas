@@ -1,0 +1,56 @@
+@use "../tools" as *;
+
+.reviews {
+	background-color: var(--color-base-light);
+
+	.standards__header {
+		max-width: 664px;
+	}
+
+	.standards__title {
+		color: var(--color-dark);
+	}
+
+	.standards__descr {
+		p {
+			color: var(--color-base-dark);
+			font-size: adapt(18, 16);
+		}
+	}
+
+	.site-slider__btn-prev {
+		border-color: var(--color-gray-3);
+
+		svg path {
+			stroke: var(--color-gray-3);
+		}
+	}
+
+	.site-slide {
+		width: adapt(384, 340) !important;
+
+		&:not(:last-child) {
+			margin-right: 24px;
+		}
+
+		&__image {
+			height: adapt(508, 450);
+
+			&::after {
+				content: "";
+				position: absolute;
+				z-index: 1;
+				top: 10px;
+				right: 10px;
+				width: 40px;
+				height: 40px;
+				background: var(--color-accent-hover) url("../../../public/images/icons/reviews-hover-arrow.svg");
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: cover;
+				opacity: 0;
+				transition: all 0.3s;
+			}
+		}
+	}
+}

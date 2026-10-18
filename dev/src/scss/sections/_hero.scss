@@ -1,0 +1,178 @@
+@use "../tools" as *;
+
+.hero {
+	position: relative;
+
+	&__container {
+		padding-block: 64px;
+		min-height: 69dvh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	&__body {
+		max-width: 660px;
+		position: relative;
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			filter: blur(60px);
+			background: linear-gradient(303deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%);
+
+			@include media($mobile-sm) {
+				opacity: 0.3;
+			}
+		}
+	}
+
+	&__title {
+		position: relative;
+		z-index: 1;
+		max-width: adapt(608, 290);
+
+		&:not(:last-child) {
+			margin-bottom: adapt(44, 32);
+		}
+
+		strong {
+			font-weight: inherit;
+			color: var(--color-accent);
+		}
+	}
+
+	&__descr {
+		position: relative;
+		z-index: 1;
+
+		&:not(:last-child) {
+			margin-bottom: adapt(40, 32);
+		}
+
+		p {
+			@include reset;
+			font-size: adapt(20, 18);
+
+			&:not(:last-child) {
+				margin-bottom: 10px;
+			}
+		}
+	}
+
+	&__btn-box {
+		position: relative;
+		z-index: 1;
+
+		display: flex;
+		gap: 20px 24px;
+		flex-wrap: wrap;
+	}
+
+	&__btn {
+		--width: 16px;
+		--bg-size: 16px;
+		gap: 12px;
+
+		&::after {
+			transition: all 0.3s;
+		}
+
+		@include hover {
+			&::after {
+				transform: translateX(8px);
+			}
+		}
+
+		@include media($mobile-sm) {
+			font-weight: 600;
+			letter-spacing: 0;
+		}
+	}
+
+	&__image-box {
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: url("../images/hero-bg-gradient.png");
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+
+			@include media($mobile-sm) {
+				background: var(--color-white);
+				opacity: 0.6;
+			}
+		}
+	}
+}
+.hero-thank-you {
+	.hero__body {
+		max-width: 600px;
+	}
+	.hero__descr {
+		strong {
+			color: var(--color-dark);
+		}
+	}
+}
+
+.hero-404 {
+	.hero__404 {
+		@include reset;
+		font-size: adapt(200, 160);
+		font-weight: 700;
+		line-height: 1;
+		position: relative;
+		z-index: 2;
+		color: var(--color-accent);
+		&:not(:last-child) {
+			margin-bottom: 12px;
+		}
+	}
+	.hero__body {
+		max-width: 750px;
+		@include media($mobile) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+		}
+	}
+	.hero__title {
+		max-width: 750px;
+		width: 100%;
+		font-size: adapt(72, 28);
+		@include media($mobile-sm) {
+			max-width: 100%;
+		}
+	}
+	.hero__btn-box {
+		@include media($mobile-sm) {
+			width: 100%;
+		}
+	}
+	.hero__btn {
+		max-width: 300px;
+		@include media($mobile-sm) {
+			width: 100% !important;
+			max-width: 100% !important;
+		}
+	}
+}

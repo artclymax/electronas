@@ -1,0 +1,252 @@
+@use "../tools" as *;
+
+.header {
+	background-color: var(--color-white);
+
+	&__container {
+		padding-block: adapt(9, 5) 5px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: adapt(40, 4, $tablet);
+	}
+
+	&__logo {
+		flex-shrink: 0;
+		width: adapt(242, 180);
+		margin-right: auto;
+	}
+
+	&__content {
+		display: flex;
+		align-items: center;
+		gap: adapt(40, 14, $tablet);
+		font-size: rem(14);
+	}
+
+	&__contacts {
+		@include reset;
+		list-style-type: none;
+		display: flex;
+		gap: adapt(40, 14, $tablet);
+	}
+
+	&__contacts-item {
+		flex-shrink: 0;
+	}
+
+	&__btn {
+		padding: 10px 20px;
+		font-size: rem(12);
+		max-width: initial;
+		width: initial;
+
+		@include media($tablet) {
+			padding-block: 12px;
+		}
+	}
+
+	&__phone-box {
+	}
+
+	&__phone-btn {
+	}
+
+	&__burger-btn {
+	}
+
+	&__menu-body {
+		background: var(--color-accent);
+		padding-block: 10px;
+		color: var(--color-white);
+
+		@include media($tablet) {
+			padding: unset;
+		}
+	}
+
+	&__menu-container {
+	}
+
+	&__menu {
+	}
+}
+
+.header-contacts-item {
+	gap: 8px;
+	--width: 16px;
+
+	&__link {
+		font-weight: 500;
+		color: var(--color-dark);
+	}
+}
+
+.header-phone-box {
+	@include reset;
+	list-style-type: none;
+	position: fixed;
+	z-index: 100;
+	top: var(--height);
+	left: 0;
+
+	width: 100%;
+	height: calc(100dvh - var(--height));
+
+	padding: 24px 10px;
+	background: var(--color-base-light);
+
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	align-items: center;
+
+	transform: translateY(-100%);
+	opacity: 0;
+	pointer-events: none;
+	visibility: hidden;
+
+	transition: all 0.3s;
+	.admin-bar & {
+		--height: calc(var(--header-height) + var(--wp-admin--admin-bar--height));
+	}
+	.open-phone-box & {
+		transform: translateY(0);
+		opacity: 1;
+		pointer-events: auto;
+		visibility: visible;
+		overflow: auto;
+
+		transition:
+			transform 0.3s ease,
+			opacity 0.3s ease,
+			visibility 0s;
+	}
+	&__item {
+	}
+
+	&__link {
+		font-weight: 500;
+		color: var(--color-dark);
+	}
+}
+
+.header-menu {
+	@include media($tablet) {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+	}
+
+	&__list {
+	}
+
+	&__box {
+		padding-top: 24px;
+		border-top: 1px solid var(--color-gray-2);
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+	}
+
+	&__emails {
+		@include reset;
+		list-style-type: none;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 8px;
+	}
+
+	&__email {
+	}
+
+	&__link {
+		font-weight: 500;
+		color: var(--color-dark);
+	}
+}
+.header {
+	&__container {
+	}
+
+	&__logo {
+	}
+
+	&__content {
+	}
+
+	&__contacts {
+	}
+
+	&__contacts-item {
+	}
+
+	&__btn {
+	}
+
+	&__phone-box {
+	}
+
+	&__phone-btn {
+	}
+
+	&__burger-btn {
+	}
+
+	&__menu-body {
+	}
+
+	&__menu-container {
+	}
+
+	&__menu {
+	}
+}
+.container {
+}
+.logo {
+}
+.hidden-tablet {
+}
+.header-contacts-item {
+	&__link {
+	}
+}
+.icon {
+}
+.icon--header-email {
+}
+.icon--header-phone {
+}
+.btn {
+}
+.header-phone-box {
+	&__item {
+	}
+
+	&__link {
+	}
+}
+.phone-btn {
+}
+.visible-tablet {
+}
+.burger-btn {
+}
+.header-menu {
+	&__list {
+	}
+
+	&__box {
+	}
+
+	&__emails {
+	}
+
+	&__email {
+	}
+
+	&__link {
+	}
+}

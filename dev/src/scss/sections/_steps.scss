@@ -1,0 +1,58 @@
+@use "../tools" as *;
+
+.steps {
+	padding-block: var(--section-padding);
+
+	&__container {
+	}
+
+	&__subtitle {
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: adapt(64, 32);
+		}
+	}
+
+	&__list {
+		--min: 282px;
+		--gap: 16px 24px;
+	}
+
+	&__item {
+	}
+}
+
+.steps-item {
+	@include hover {
+		.steps-item__number {
+			color: var(--color-accent-hover);
+		}
+	}
+
+	&__number {
+		@include reset;
+
+		font-weight: 900;
+		font-size: adapt(60, 40);
+		color: var(--color-gray-2);
+		transition: all 0.3s;
+
+		&:not(:last-child) {
+			margin-bottom: adapt(24, 8);
+		}
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: adapt(24, 8);
+		}
+	}
+
+	&__descr {
+		p {
+			font-size: 14px;
+		}
+	}
+}

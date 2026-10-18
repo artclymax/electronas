@@ -1,0 +1,108 @@
+@use "../tools" as *;
+
+.about {
+	padding-block: var(--section-padding);
+	background-color: var(--color-white);
+
+	&__container {
+		display: flex;
+		gap: 32px;
+		justify-content: space-between;
+
+		@include media($tablet) {
+			flex-direction: column;
+		}
+	}
+
+	&__content {
+		max-width: 588px;
+
+		@include media($tablet) {
+			max-width: 100%;
+		}
+	}
+
+	&__subtitle {
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: adapt(40, 16);
+		}
+	}
+
+	&__descr {
+		&:not(:last-child) {
+			margin-bottom: adapt(40, 32);
+		}
+
+		p {
+			@include reset;
+
+			@include media($mobile-sm) {
+				font-size: 18px;
+			}
+
+			&:not(:last-child) {
+				margin-bottom: 16px;
+			}
+		}
+	}
+
+	&__list {
+		--min: 180px;
+		--gap: 16px 24px;
+
+		@include media($tablet) {
+			--min: 234px;
+		}
+	}
+
+	&__item {
+	}
+
+	&__image {
+		max-width: 532px;
+		width: 100%;
+
+		@include media($tablet) {
+			max-width: 100%;
+			min-height: 423px;
+		}
+	}
+}
+
+.about-item {
+	border: 1px solid var(--color-gray-2);
+	padding: adapt(24, 16) adapt(24, 10);
+
+	&__icon {
+		width: 24px;
+		height: 24px;
+
+		&:not(:last-child) {
+			margin-bottom: adapt(16, 8);
+		}
+	}
+
+	&__number {
+		@include reset;
+
+		font-weight: 700;
+		font-size: 30px;
+		color: var(--color-dark);
+
+		&:not(:last-child) {
+			margin-bottom: adapt(16, 8);
+		}
+	}
+
+	&__text {
+		@include reset;
+
+		font-size: 14px;
+		text-transform: uppercase;
+		letter-spacing: 0.7px;
+		color: var(--color-gray-3);
+	}
+}

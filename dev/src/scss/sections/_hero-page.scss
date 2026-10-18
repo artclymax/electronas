@@ -1,0 +1,17 @@
+@use "../tools" as *;
+.hero-page {
+	padding-top: adapt(24, 14);
+	padding-bottom: adapt(44, 32);
+	&__container {
+		display: flex;
+		flex-direction: column;
+		gap: adapt(44, 24);
+	}
+
+	&__breadcrumbs {
+	}
+
+	&__title {
+		text-align: center;
+	}
+}

@@ -1,0 +1,41 @@
+@use "../tools" as *;
+
+.section-cta {
+	background: var(--color-accent);
+	color: var(--color-white);
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 42px adapt(48, 24, $tablet);
+
+		@include media($mobile) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__content {
+		flex: 0 0 483px;
+		display: flex;
+		flex-direction: column;
+		gap: adapt(24, 16);
+	}
+
+	&__title {
+		@include reset;
+		font-weight: 700;
+		font-size: adapt(36, 24);
+	}
+
+	&__descr {
+	}
+
+	&__form {
+		flex-shrink: 1;
+		background: var(--color-white);
+		padding: adapt(24, 16);
+		color: var(--color-gray-3);
+		box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+	}
+}
